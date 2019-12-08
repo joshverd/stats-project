@@ -1,5 +1,5 @@
 # stats-project
-A demo is hosted on [https://stats.joshverd.com](stats.joshverd.com)
+A demo is hosted on [stats.joshverd.com](https://stats.joshverd.com)
 
 Built this weekend by hand using React, SCSS, and JavaScript. Most source code files are in `./src`.
 

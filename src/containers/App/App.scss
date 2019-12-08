@@ -18,5 +18,23 @@
     display: flex;
     border: 1px solid white;
     flex-direction: column;
+    overflow: hidden;
   }
+}
+
+.animationEnter {
+  @include addAnimation('addAnimation', 20%);
+}
+
+.animationEnterDone {
+  flex: 20%!important;
+}
+
+.animationExit {
+  @include removeAnimation('removeAnimation', 20%);
+}
+
+.animationExitDone {
+  flex: .000001;
+  height: 0;
 }

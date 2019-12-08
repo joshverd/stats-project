@@ -5,6 +5,7 @@ import style from './App.scss';
 import ProblemStatement from '../../components/ProblemStatement/ProblemStatement.js';
 import TabSelector from '../../components/TabSelector/TabSelector.js';
 import Tab from '../../components/Tab/Tab.js';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const App = props => {
   // The current, displayed tab
@@ -12,7 +13,12 @@ const App = props => {
 
   // Mapping the name of the tab to a component that should be displayed
   const tabNameToComponent = {
-    'question': null,
+    'question': (
+      <ProblemStatement
+        title="Problem Statement"
+        text="A Restaurant's owner, Tristan, estimates that 85% of customers purchase a drink, but only 65% actually purchase a meal. Tristan also calculated that the profit earned on a drink sale is $5 and the profit earned on a meal sale is $15."
+      />
+    ),
     'questionA': (
       <Tab
         title="Question A"
@@ -27,7 +33,7 @@ const App = props => {
     ),
     'questionC': (
       <Tab
-        title="Question A"
+        title="Question C"
         text="What is the probability that the 5th customer to enter the Restaurant orders a drink?"
       />
     ),
@@ -51,17 +57,32 @@ const App = props => {
         />
       </div>
       <div className={style.tabWrapper}>
-        <ProblemStatement
-          title="Problem Statement"
-          text="A Restaurant's owner, Tristan, estimates that 85% of customers purchase a drink, but only 65% actually purchase a meal. Tristan also calculated that the profit earned on a drink sale is $5 and the profit earned on a meal sale is $15."
-        />
-      {Object.keys(tabNameToComponent).map((tabName, index) => {
-        console.log(selectedTabIndex, index);
-        // If the index is higher than the selected tab's index, then remove don't show it.
-        if(index > selectedTabIndex) return;
+        <TransitionGroup
+          component={null}
+        >
+          {Object.keys(tabNameToComponent).map((tabName, index) => {
+            console.log(selectedTabIndex, index);
+            // If the index is higher than the selected tab's index, then remove don't show it.
+            if(index > selectedTabIndex) return;
 
-        return tabNameToComponent[tabName];
-      })}
+            return (
+              <CSSTransition
+                key={tabName}
+                timeout={300}
+                classNames={{
+                  appear: style.animationAppear,
+                  appearDone: style.animationAppearDone,
+                  enter: style.animationEnter,
+                  enterDone: style.animationEnterDone,
+                  exit: style.animationExit,
+                  exitDone: style.animationExitDone,
+                }}
+              >
+                {tabNameToComponent[tabName]}
+              </CSSTransition>
+            );
+          })}
+        </TransitionGroup>
       </div>
     </div>
   );

@@ -21,14 +21,28 @@ $dark-gray: darken($white, 50%);
   @keyframes #{$animationName} {
     0% {
       flex: .00001;
-      opacity: 0;
+      height: 0;
     }
-    90% {
-      opacity: 0;
-    }
-    to {
+    100% {
       flex: $flexMax;
-      opacity: 1;
+    }
+  }
+}
+
+@mixin removeAnimation($animationName, $flexMax)  {
+  $time: .3s;
+
+  -webkit-animation: #{$animationName} $time ease forwards;
+  -o-animation: #{$animationName} $time ease forwards;
+  animation: #{$animationName} $time ease forwards;
+
+  @keyframes #{$animationName} {
+    0% {
+      flex: $flexMax;
+    }
+    100% {
+      flex: .000001;
+      height: 0;
     }
   }
 }

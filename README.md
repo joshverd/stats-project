@@ -1,16 +1,15 @@
-# react-scss-barebones-template
-A bare-bones template for a ReactJS app (with SASS and Webpack) and an Express backend.
+# stats-project
+Built this weekend by hand using React, SCSS, and JavaScript. Most source code files are in `./src`.
 
-The npm start script runs both the front-end and the back-end at the same time using Concurrently. Nodemon is used to watch for backend changes and automatically restart the app. Webpack-dev-server automagically re-compiles the front-end when it detects a change. In package.json, we have a Nodemon flag set to ignore any changes from './src' so that the back-end does not restart due to a front-end change.
+This only contains the Problem Statement and three sub-questions. The solutions will be turned in as a hard copy.
 
 ### Directory/File List
- - `./routes` - All the backend routes' code
  - `./public` - All files in here are exposed to the public internet when backend server is run
  - `./src` - The source code for the front-end. When the build script is run, these files are compiled and put in to `./public`
- - `./utils` - Utility functions used by the backend
  - `./config.js` - The backend config
 
 ### Running
+Enter the `stats-project` directory and run the following commands:
 ```
 npm i
 npm start
@@ -21,6 +20,3 @@ This will populate the `./public` directory with the compiled version of `./src`
 ```
 npm run build
 ```
-
-### Found an issue?
-Open a pull request :)

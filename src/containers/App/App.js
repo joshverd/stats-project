@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from './App.scss';
 
 // Components
-import QuestionTab from '../../components/QuestionTab/QuestionTab.js';
+import ProblemStatement from '../../components/ProblemStatement/ProblemStatement.js';
 import TabSelector from '../../components/TabSelector/TabSelector.js';
 
 const App = props => {
@@ -11,14 +11,26 @@ const App = props => {
 
   // Mapping the name of the tab to a component that should be displayed
   const tabNameToComponent = {
-    'question': <QuestionTab />,
+    'question': (
+      <ProblemStatement
+        title="Problem Statement"
+        text="Someone does something and something else. How does this work?"
+      />
+    ),
+    'questionA': null,
+    'questionB': null,
+    'questionC': null,
   };
+
+  const onNewTab = newTabName => setSelectedTab(newTabName);
 
   return (
     <div className={style.appWrapper}>
       <div className={style.tabSelectorWrapper}>
         <TabSelector
           tabs={tabNameToComponent}
+          onNewTab={onNewTab}
+          selectedTab={selectedTab}
         />
       </div>
       <div className={style.tabWrapper}>

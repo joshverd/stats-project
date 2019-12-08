@@ -2,25 +2,101 @@
 
 .tabSelector {
   display: flex;
-  height: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-  > div {
+  @include noselect;
+
+  > .buttonsWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 20%;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 20%;
+    }
+
+    > .tabAbbreviationWrapper {
+      border: 2px solid $dark-gray;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      margin: 0 5px;
+
+      transition: border .1s linear;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      // On hover, but not already selected
+      &:hover:not(.selected) {
+        border-color: $gray;
+      }
+
+      &.selected {
+        border-color: $white;
+
+        > span {
+          color: $white;
+        }
+      }
+
+      > span {
+        color: $dark-gray;
+        font-weight: 600;
+        transition: color .1s linear;
+      }
+    }
+
+
+    > .spacerWrapper {
+      height: 30px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > .spacer {
+        color: $white;
+        border: 1px solid $dark-gray;
+        height: 15px;
+      }
+    }
+
+    > .backButton,
+    > .forwardButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+
+      > i {
+        color: $white;
+        font-size: 35px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.disabled {
+          color: $dark-gray;
+        }
+      }
+    }
   }
 
-  > .backButton,
-  > .forwardButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
+  > .textWrapper {
+    margin-top: 7px;
 
-    > i {
-      color: $white;
-      font-size: 35px;
+    > span {
+      color: $gray;
+      font-weight: 300;
+      font-size: 14px;
     }
   }
 }

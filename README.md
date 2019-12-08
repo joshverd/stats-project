@@ -1,4 +1,6 @@
 # stats-project
+A demo is hosted on [https://stats.joshverd.com](stats.joshverd.com)
+
 Built this weekend by hand using React, SCSS, and JavaScript. Most source code files are in `./src`.
 
 This only contains the Problem Statement and three sub-questions. The solutions will be turned in as a hard copy.

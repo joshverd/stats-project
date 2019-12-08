@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
 
   @include noselect;
 
@@ -78,6 +79,10 @@
       > i {
         color: $white;
         font-size: 35px;
+
+        &.disabled {
+          color: $gray;
+        }
 
         &:hover {
           cursor: pointer;

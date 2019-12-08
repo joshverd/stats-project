@@ -5,6 +5,7 @@ import style from './App.scss';
 import ProblemStatement from '../../components/ProblemStatement/ProblemStatement.js';
 import TabSelector from '../../components/TabSelector/TabSelector.js';
 import Tab from '../../components/Tab/Tab.js';
+import ViewCodeButton from '../../components/ViewCodeButton/ViewCodeButton.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const App = props => {
@@ -55,6 +56,9 @@ const App = props => {
           onNewTab={onNewTab}
           selectedTab={selectedTab}
         />
+        <div className={style.viewCodeButtonWrapper}>
+          <ViewCodeButton />
+        </div>
       </div>
       <div className={style.tabWrapper}>
         <TransitionGroup

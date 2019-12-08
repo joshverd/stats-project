@@ -9,11 +9,18 @@
   > .tabSelectorWrapper {
     flex: 1 1 10%;
     display: flex;
-    align-items: center;
-    justify-content: center;
 
     @media screen and (max-width: $breakpoint-medium) {
       padding-top: 10px;
+    }
+
+    > .viewCodeButtonWrapper {
+      position: absolute;
+      margin: 20px 0 0 20px;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        margin: 5px 0 0 10px;
+      }
     }
   }
 

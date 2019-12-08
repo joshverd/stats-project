@@ -1,0 +1,36 @@
+@import '../../variables.scss';
+
+.buttonWrapper {
+  border: none;
+  outline: none;
+  text-decoration: none;
+
+  > .button {
+    border-radius: 5px;
+    background-color: $white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s linear;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
+    > i {
+      color: $black;
+      font-size: 17px;
+    }
+
+    > span {
+      color: $black;
+      margin-left: 7px;
+      font-size: 17px;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        display: none;
+      }
+    }
+  }
+}

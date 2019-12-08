@@ -2,7 +2,6 @@ import React from 'react';
 import style from './TabSelector.scss';
 
 const TabSelector = props => {
-
   // Mapping tab abbreviations to the full tab name
   const tabAbbreviationToName = {
     'Q': 'question',
@@ -47,11 +46,24 @@ const TabSelector = props => {
     return props.onNewTab(newTabName);
   };
 
+  // The index of the currently selected tab
+  const selectedTabIndex = Object.keys(props.tabs).indexOf(props.selectedTab);
+
+  console.log(selectedTabIndex + 1 > props.tabs.length - 1, selectedTabIndex + 1, Object.keys(props.tabs).length - 1);
+
   return (
     <div className={style.tabSelector}>
       <div className={style.buttonsWrapper}>
         <div className={style.backButton}>
-          <i className="far fa-angle-left" onClick={() => onArrowClick('left')} />
+          <i
+            className={[
+              selectedTabIndex - 1 < 0
+                ? style.disabled
+                : '',
+              "far fa-angle-left",
+            ].join(' ')}
+            onClick={() => onArrowClick('left')}
+          />
         </div>
         {Object.keys(tabAbbreviationToName).map((tabAbbreviation, index) => {
           return (
@@ -77,7 +89,15 @@ const TabSelector = props => {
           );
         })}
         <div className={style.forwardButton}>
-          <i className="far fa-angle-right" onClick={() => onArrowClick('right')} />
+          <i
+            className={[
+              selectedTabIndex + 1 > Object.keys(props.tabs).length - 1
+                ? style.disabled
+                : '',
+              "far fa-angle-right",
+            ].join(' ')}
+            onClick={() => onArrowClick('right')}
+          />
         </div>
       </div>
       <div className={style.textWrapper}>

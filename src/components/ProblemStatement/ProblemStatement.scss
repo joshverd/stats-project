@@ -6,4 +6,10 @@
   flex-basis: 20%;
   @include noselect;
   @include addAnimation('problemStatement', 30%);
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    flex-wrap: wrap;
+    flex-direction: column!important;
+    justify-content: center;
+  }
 }

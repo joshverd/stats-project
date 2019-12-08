@@ -6,12 +6,32 @@
   margin-left: 2%;
   padding: 0 25px;
 
+  @media screen and (max-width: $breakpoint-mobile) {
+    margin-left: 0!important;
+  }
+
   > span {
     font-size: 80px;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
     color: $black;
-    white-space: nowrap
+    white-space: nowrap;
+
+    @media screen and (max-width: $breakpoint-large) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 50px;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      font-size: 45px;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 35px;
+    }
   }
 }

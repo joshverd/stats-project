@@ -16,7 +16,7 @@ const App = props => {
     'question': (
       <ProblemStatement
         title="Problem Statement"
-        text="A Restaurant's owner, Tristan, estimates that 85% of customers purchase a drink, but only 65% actually purchase a meal. Tristan also calculated that the profit earned on a drink sale is $5 and the profit earned on a meal sale is $15."
+        text="A Restaurant's owner, Tristan, estimates that 85% of customers purchase a drink, but only 65% actually purchase a food item. Tristan also calculated that the profit earned on a drink sale is $5 and the profit earned on a food item sale is $15."
       />
     ),
     'questionA': (
@@ -27,14 +27,14 @@ const App = props => {
     ),
     'questionB': (
       <Tab
-        title="Question b"
-        text="What is the probability that the 5th customer to enter the Restaurant orders a drink?"
+        title="Question B"
+        text="What is the probability of the 22nd customer being the first person to order a meal?"
       />
     ),
     'questionC': (
       <Tab
         title="Question C"
-        text="What is the probability that the 5th customer to enter the Restaurant orders a drink?"
+        text="If 150 customers visit the Restaurant in a day, how much money should Tristan expect to profit, total, from food and drink sales?"
       />
     ),
   };

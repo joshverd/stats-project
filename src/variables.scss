@@ -4,6 +4,11 @@ $white: #fff;
 $gray: darken($white, 30%);
 $dark-gray: darken($white, 50%);
 
+$breakpoint-large: 1500px;
+$breakpoint-medium: 1250px;
+$breakpoint-small: 900px;
+$breakpoint-mobile: 650px;
+
 @mixin noselect {
   -webkit-user-select: none; /* Chrome all / Safari all */
   -moz-user-select: none;   /* Firefox all */

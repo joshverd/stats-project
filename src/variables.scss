@@ -10,3 +10,25 @@ $dark-gray: darken($white, 50%);
   -ms-user-select: none;  /* IE 10+ */
    user-select: none;  /* Likely future */
 }
+
+@mixin addAnimation($animationName, $flexMax)  {
+  $time: .3s;
+
+  -webkit-animation: #{$animationName} $time ease forwards;
+  -o-animation: #{$animationName} $time ease forwards;
+  animation: #{$animationName} $time ease forwards;
+
+  @keyframes #{$animationName} {
+    0% {
+      flex: .00001;
+      opacity: 0;
+    }
+    90% {
+      opacity: 0;
+    }
+    to {
+      flex: $flexMax;
+      opacity: 1;
+    }
+  }
+}

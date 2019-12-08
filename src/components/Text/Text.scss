@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.textWrapper {
+  display: flex;
+  margin-left: 30px;
+
+  > span {
+    color: $white;
+    font-size: 35px;
+    text-wrap: wrap;
+  }
+}

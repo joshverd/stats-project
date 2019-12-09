@@ -17,25 +17,25 @@ const App = props => {
     'question': (
       <ProblemStatement
         title="Problem Statement"
-        text="A Restaurant's owner, Tristan, estimates that 85% of customers purchase a drink, but only 65% actually purchase a food item. Tristan also calculated that the profit earned on a drink sale is $5 and the profit earned on a food item sale is $15."
+        text="A Restaurant's owner estimates that 45% of customers purchase a drink, but only 25% actually purchase a food item. Assume customers, food sales, and drink sales are independent."
       />
     ),
     'questionA': (
       <Tab
         title="Question A"
-        text="What is the probability that the 5th customer to enter the Restaurant orders a drink?"
+        text="What is the probability that the first 5 customers to enter the Restaurant all order a drink?"
       />
     ),
     'questionB': (
       <Tab
         title="Question B"
-        text="What is the probability of the 22nd customer being the first person to order a meal?"
+        text="What is the probability that the 6th customer is the first to order a food item?"
       />
     ),
     'questionC': (
       <Tab
         title="Question C"
-        text="If 150 customers visit the Restaurant in a day, how much money should Tristan expect to profit, total, from food and drink sales?"
+        text="Suppose the probability of a customer buying both a drink AND a food item is 15%. Out of 450 customers, what is the probability that 180 or less leave without purchasing any items?"
       />
     ),
   };

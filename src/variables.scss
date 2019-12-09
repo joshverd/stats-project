@@ -5,6 +5,8 @@ $light-gray: darken($white, 15%);
 $gray: darken($white, 30%);
 $dark-gray: darken($white, 50%);
 
+$animation-time: .3s;
+
 $breakpoint-large: 1500px;
 $breakpoint-medium: 1250px;
 $breakpoint-small: 900px;
@@ -18,7 +20,7 @@ $breakpoint-mobile: 650px;
 }
 
 @mixin addAnimation($animationName, $flexMax)  {
-  $time: .3s;
+  $time: $animation-time;
 
   -webkit-animation: #{$animationName} $time ease forwards;
   -o-animation: #{$animationName} $time ease forwards;
@@ -26,17 +28,16 @@ $breakpoint-mobile: 650px;
 
   @keyframes #{$animationName} {
     0% {
-      flex: .00001;
-      height: 0;
+      transform: translateY(400%);
     }
     100% {
-      flex: $flexMax;
+      transform: translateY(0);
     }
   }
 }
 
 @mixin removeAnimation($animationName, $flexMax)  {
-  $time: .3s;
+  $time: $animation-time;
 
   -webkit-animation: #{$animationName} $time ease forwards;
   -o-animation: #{$animationName} $time ease forwards;
@@ -44,11 +45,10 @@ $breakpoint-mobile: 650px;
 
   @keyframes #{$animationName} {
     0% {
-      flex: $flexMax;
+      transform: translateY(0);
     }
     100% {
-      flex: .000001;
-      height: 0;
+      transform: translateY(400%);
     }
   }
 }

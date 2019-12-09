@@ -3,13 +3,12 @@
 .tabWrapper {
   display: flex;
   align-items: flex-start;
-  flex: 1 1 80%;
+  padding: 2% 0;
   @include noselect;
 
   > .tab {
     width: 100%;
     display: flex;
-    align-items: center;
 
     @media screen and (max-width: $breakpoint-mobile) {
       flex-wrap: wrap;
